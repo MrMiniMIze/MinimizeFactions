@@ -1,0 +1,104 @@
+grace-system:
+  enabled: true
+  minutes: 120
+
+tnt:
+  max-bank: 1000000
+
+points:
+  max: 999999
+
+territoryBlockProtection: true
+
+messages:
+  root:
+    header: "&eMinimizeFactions Commands:"
+    list:
+      - "&7 /f points"
+      - "&7 /f tnt"
+      - "&7 /f check"
+      - "&7 /f create <name>"
+      - "&7 /f disband"
+      - "&7 /f claim"
+      - "&7 /f unclaim"
+      - "&7 /f unclaimall"
+      - "&7 /f autoclaim"
+      - "&7 /f map"
+      - "&7 /f admin ..."
+    unknown_subcommand: "&cUnknown subcommand: &e%subcmd%"
+
+  create:
+    usage: "&cUsage: /f create <name>"
+    already_in_faction: "&cYou are already in a faction!"
+    success: "&aCreated faction: &e%faction%"
+
+  disband:
+    not_in_faction: "&cYou are not in a faction!"
+    success: "&eYour faction has been disbanded."
+
+  points:
+    no_faction: "&cYou are not in a faction!"
+    current: "&6Your faction has &e%points% &6points."
+    usage: "&eUsage: /f points [add|set] <amount>"
+    add_success: "&aAdded &e%amount% &ato your faction's points."
+    set_success: "&aSet faction points to &e%amount%."
+    invalid_number: "&cThat is not a valid number."
+
+  tnt:
+    no_faction: "&cYou are not in a faction!"
+    current: "&6Faction TNT Bank: &e%tnt%"
+    usage: "&eUsage: /f tnt [add|set] <amount>"
+    add_success: "&aAdded &e%amount% &aTNT to your faction."
+    set_success: "&aSet TNT bank to &e%amount%."
+    invalid_number: "&cThat is not a valid number."
+
+  check:
+    message: "&7No suspicious activity found."
+
+  claim:
+    no_faction: "&cYou are not in a faction!"
+    already_claimed: "&cThis chunk is already claimed by &f%owner%&c!"
+    success: "&aClaimed this chunk for your faction."
+    usage: "&cUsage: /f claim"
+
+  unclaim:
+    no_faction: "&cYou are not in a faction!"
+    not_owned: "&cThis chunk is not owned by your faction."
+    success: "&aUnclaimed this chunk."
+    usage: "&cUsage: /f unclaim"
+
+  unclaimall:
+    no_faction: "&cYou are not in a faction!"
+    success: "&aUnclaimed all your faction's land."
+
+  block:
+    cancel_break: "&cYou cannot break blocks in the territory of &f%faction%&c!"
+
+  autoclaim:
+    enabled: "&aAutoClaim is now &eenabled."
+    disabled: "&cAutoClaim is now &edisabled."
+
+  map:
+    header: "&6--- Nearby Factions Map ---"
+    line_format: "&7%line%"
+    footer: "&6--- End of Map ---"
+    wilderness_symbol: "-"
+    your_symbol: "&aY"
+    other_symbol: "&c#"
+    radius: 5
+
+  admin:
+    usage: "&cUsage: /f admin <claim|unclaim|unclaimall|autoclaim> ..."
+    claim:
+      success: "&aAdmin-claimed this chunk for faction &f%faction%&a."
+      no_faction: "&cNo such faction: &f%name%"
+    unclaim:
+      success: "&eAdmin unclaimed this chunk."
+    unclaimall:
+      usage: "&cUsage: /f admin unclaimall <factionName>"
+      success: "&eAdmin unclaimed all land for &f%faction%&e."
+      no_faction: "&cNo such faction: &f%name%"
+    autoclaim:
+      usage: "&cUsage: /f admin autoclaim <factionName>"
+      success_on: "&aAdmin auto-claim &eenabled &afor faction &f%faction%&a."
+      success_off: "&cAdmin auto-claim &edisabled."
